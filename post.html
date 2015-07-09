@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+      <link rel="stylesheet" type="text/css" href="main.css">
+	<style> 
+            #navi{
+              display: table;
+              height: 100px;
+              width: 100%;
+            }
+            #navi li a:link{
+               color: red;
+               text-transform: uppercase;
+            }
+	      #navi li{
+               display: table-cell;
+               height: 100px;
+               width: 25%;
+               line-height: 100px;
+               text-align: center;
+               background: green;
+               border-right: 1px solid #fff;
+               white-space: nowrap;
+            }
+            
+            .main-body {
+               border-style: dotted;
+               width: 50%;
+               margin: auto;
+               background-color: grey;
+               text-align: center;
+               padding: 10px 10px 10px 10px;
+               float: center;
+               postition: relative;
+            }
+            .left-column{
+               float: left;
+               position: relative;
+            }
+            .right-column{
+               float: right;         
+               position: relative;
+            }
+            .wrapper{
+               float: center;
+            }
+   	</style>
+	<title>Weirdo</title>
+</head>
+<body>
+	<div>
+		<ul id="navi">
+			<li> <a href="#home"> HOME</a></li>
+			<li> <a href="#post"> POST</a></li>
+			<li> <a href="#view_post"> VIEW POSTS</a></li>
+		</ul>
+	</div>
+   <div class="wrapper">
+      <div class="left-column">
+      Put stuff here
+      </div>
+       <div class="right-column">
+          Put stuff here
+      </div>
+      <div class="main-body">
+	   <label type="text"> ID: </label> <input type="text" id="weird_id"/> <br>
+	   <label type="text"> NAME :</label> <input type="text" id="weird_name"/> <br>
+	   <label type="text"> IMAGE: </label> <input type="text" id="weird_image"/> <br>
+	   <label type="text"> STORY:</label> <input type="text" id="weird_story"/> <br>
+	   <button type="button" id="weird_post"> POST </button>
+	   <button type="button" id="weird_view"> VIEW </button>
+       </div>
+    </div>
+</body>
+</html>
