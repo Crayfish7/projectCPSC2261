@@ -1,75 +1,119 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-      <link rel="stylesheet" type="text/css" href="main.css">
-	<style> 
-            #navi{
-              display: table;
-              height: 100px;
-              width: 100%;
-            }
-            #navi li a:link{
-               color: red;
-               text-transform: uppercase;
-            }
-	      #navi li{
-               display: table-cell;
-               height: 100px;
-               width: 25%;
-               line-height: 100px;
-               text-align: center;
-               background: green;
-               border-right: 1px solid #fff;
-               white-space: nowrap;
-            }
-            
-            .main-body {
-               border-style: dotted;
-               width: 50%;
-               margin: auto;
-               background-color: grey;
-               text-align: center;
-               padding: 10px 10px 10px 10px;
-               float: center;
-               postition: relative;
-            }
-            .left-column{
-               float: left;
-               position: relative;
-            }
-            .right-column{
-               float: right;         
-               position: relative;
-            }
-            .wrapper{
-               float: center;
-            }
-   	</style>
-	<title>Weirdo</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <style type="text/css">
+    .main-body {
+     border-style: dotted;
+     width: 50%;
+     margin: auto;
+     background-color: lightgrey;
+     text-align: center;
+     padding: 10px 10px 10px 10px;
+     float: center;
+     postition: relative;
+    }
+    .left-column{
+       float: left;
+       position: relative;
+    }
+    .right-column{
+       float: right;         
+       position: relative;
+    }
+    .wrapper{
+       float: center;
+    }
+  </style>
+  <title>Weirdo</title>
 </head>
+
 <body>
-	<div>
-		<ul id="navi">
-			<li> <a href="#home"> HOME</a></li>
-			<li> <a href="#post"> POST</a></li>
-			<li> <a href="#view_post"> VIEW POSTS</a></li>
-		</ul>
-	</div>
-   <div class="wrapper">
-      <div class="left-column">
-      Put stuff here
-      </div>
-       <div class="right-column">
-          Put stuff here
-      </div>
-      <div class="main-body">
-	   <label type="text"> ID: </label> <input type="text" id="weird_id"/> <br>
-	   <label type="text"> NAME :</label> <input type="text" id="weird_name"/> <br>
-	   <label type="text"> IMAGE: </label> <input type="text" id="weird_image"/> <br>
-	   <label type="text"> STORY:</label> <input type="text" id="weird_story"/> <br>
-	   <button type="button" id="weird_post"> POST </button>
-	   <button type="button" id="weird_view"> VIEW </button>
-       </div>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">W.E.I.R.D.O</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">POST<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">VIEW</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="wrapper">
+  <div class="left-column">
+    Put stuff here
+  </div>
+  <div class="right-column">
+    Put stuff here
+  </div>
+  <div class="main-body">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Profile ID">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">NAME</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="NAME">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">IMAGE</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Image link">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Sign in</button>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
