@@ -1,0 +1,21 @@
+    .main-body {
+     border-style: dotted;
+     width: 50%;
+     margin: auto;
+     background-color: lightgrey;
+     text-align: center;
+     padding: 10px 10px 10px 10px;
+     float: center;
+     postition: relative;
+    }
+    .left-column{
+       float: left;
+       position: relative;
+    }
+    .right-column{
+       float: right;         
+       position: relative;
+    }
+    .wrapper{
+       float: center;
+    }
