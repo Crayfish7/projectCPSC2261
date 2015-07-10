@@ -17,6 +17,7 @@ app.get("/messages/all", function (req, res) {
 		}
 	})
 }); 
+< a href ="52.25.213.221:1337/messages/post"
 
 app.get("/messages/main", function (req, res){
 	var noProfiles= db.profile.count();
@@ -25,12 +26,15 @@ app.get("/messages/main", function (req, res){
 	});
 
 app.put("/messages/post", function (req,res){
-	var profileId = req.id;
-	var name= req.name;
+	var profileId = req.body;
+	/*var name= req.name;
 	var story=req.story;
-	var image=req.image;
-	db.messages.update({"id":profileId},{$push:{"story":story,"name": name,"image":image}})
-	res.send("allah");
+	var image=req.image;*/
+	//db.messages.update({"id":profileId},{$push:{"story":story,"name": name,"image":image}})
+	db.profile.insert(req.body, function(err, records){
+	res.send(req.body + " saved!");	
+    }); 
+
 });
 var server = app.listen(1337, function () {
 
