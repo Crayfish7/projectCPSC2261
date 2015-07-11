@@ -78,12 +78,13 @@
       <body ng-controller='view_controller' ng-init="fetch_posts()">
 		<div ng-repeat="post in posts" class="view_post">
 			<div style="float:left;"> 
-				{{post.name}}
-				<!-- the like counter, iunno where to put it-->
+				{{post.name}} <br>
+				{{post.likes}}<!-- the like counter, iunno where to put it-->
                         <button ng-click="like_counter(post.profile_id,post.name,post.email,post.title,post.story,post.url,post.likes)" id="like_count" ng-model="like_count" placeholder="Like Counter" >Like This Post</button>
 			</div>
 			<div style="float:left;"> 
-				{{post.title}} {{post.story}}
+				{{post.title}} <br>
+				{{post.story}}
 			</div>
 			<div style="float:center;">
 				{{post.story}}
