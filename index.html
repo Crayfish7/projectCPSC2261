@@ -1,6 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
+    	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.js"></script>
+	<script>
+		angular.module('myApp',['ui.bootstrap']);
+		angular.module('myApp').controller('random_post_controller', function($scope,$http){
+			var random_post = [];
+			$scope.fetch_post = function(){
+				$http.get('http://52.25.213.221:1337/messages/main').success(function(response){
+					$scope.random_post.push(response.data);
+				});
+			}
+		});
+	</script>
 	<style> 
             .main-body {
                border-style: dotted;
@@ -30,15 +43,24 @@
 	
       <div class="wrapper">
 	   <!-- anchor to new page for top posts -->
-         <div class="left-column">
-            <img src="" height="200px" width="200px" /img>
-         </div>
-         <div class="right-column">
-            <img src="" height="200px" width="200px" /img>
+	   <!-- need to figure out the format of the how the posts should look like for left/right column -->
+         <div ng-controller='random_post_controller' ng-init='fetch_post()'>
+         	<div ng-model="random_post[0]">
+            		<div class="left-column">
+            			<img src="random_post[0].url" height="200px" width="200px" /img>
+            			//{{random_post[0].title}}, {{random_post[0].story}}, {{random_post[0].name}}
+            		</div>
+         	</div>
+         	<div ng-model="random_post[1]">
+         		<div class="right-column">
+            			<img src="random_post[1].url" height="200px" width="200px" /img>
+            			//{{random_post[1].title}}, {{random_post[1].story}}, {{random_post[1].name}}
+         		</div>
+         	</div>
          </div>
          <div class="main-body">
-	      <button  type="button" id="weird_post"> POST </button> 
-	      <button  type="button" id="weird_view"> VIEW </button>
+         	<input type="button" onclick="location.href='#weird_post';" value="POST"> POST</button>
+	      	<input type="button" onclick="location.href='#weird_view';" value="VIEW"> VIEW</button>
          </div>
       </div>
 </body>
