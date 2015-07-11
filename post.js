@@ -13,7 +13,7 @@
           likes : 0 
           //like counter?
         };
-        $http.post('http://jsonstub.com/message/post', dataObj).
+        $http.put('http://52.25.213.221:1337/messages/post', dataObj).
           success(function(data, status, headers, config) {
             // this callback will be called asynchronously
             // when the response is available
