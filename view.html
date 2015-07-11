@@ -35,7 +35,7 @@
           			likes : number + user_likes;
         			};
 
-         			$http.post('http://jsonstub.com/message/post', dataObj).
+         			$http.post('http://52.25.213.221:1337/messages/post', dataObj).
           				success(function(data, status, headers, config) {
           				console.log(user_id+ "has been updated.");	
         			}).
