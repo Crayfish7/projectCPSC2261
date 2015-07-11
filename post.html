@@ -21,8 +21,6 @@
   <style type="text/css">
     .main-body {
      border-style: dotted;
-     width: 50%;
-     margin: auto;
      background-color: lightgrey;
      text-align: center;
      padding: 10px 10px 10px 10px;
@@ -30,15 +28,14 @@
      postition: relative;
     }
     .left-column{
+       border-style: dotted;
        float: left;
        position: relative;
     }
     .right-column{
+       border-style: dotted;
        float: right;         
        position: relative;
-    }
-    .wrapper{
-       float: center;
     }
   </style>
   <title>Weirdo</title>
@@ -67,74 +64,80 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="wrapper">
-  <div class="left-column">
-    Put stuff here
-  </div>
-  <div class="right-column">
-    Put stuff here
-  </div>
-  <div class="main-body">
-      <form class="form-horizontal">
-        <!--user input ID-->
-        <div class="form-group">
-          <label for="profile_id" class="col-sm-2 control-label">ID</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="profile_id" placeholder="Profile ID">
-          </div>
-        </div>
-        <!--user name-->
-        <div class="form-group">
-          <label for="name" class="col-sm-2 control-label">Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" placeholder="You name">
-          </div>
-        </div>
-        <!--user email-->
-        <div class="form-group">
-          <label for="email" class="col-sm-2 control-label">E-Mail</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Your Emaill Address">
-          </div>
-        </div>
-        <!--story title-->
-        <div class="form-group">
-          <label for="title" class="col-sm-2 control-label">Story Title</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="title" placeholder="Story Title">
-          </div>
-        </div>
-        <!--story-->
-        <div class="form-group">
-          <label for="description" class="col-sm-2 control-label">Story</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" id="description" placeholder="Story"></textarea>
-          </div>
-        </div>
-        <!--story image-->
-        <div class="form-group">
-          <label for="url" class="col-sm-2 control-label">Image</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="url" placeholder="Image URL">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Top Story</h3>
+      <h4>Title</h4>
+      <p>Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here</p>
+    </div>
+    <div class="col-md-6 main-body">
+        <form class="form-horizontal">
+          <!--user input ID-->
+          <div class="form-group">
+            <label for="profile_id" class="col-sm-2 control-label">ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="profile_id" placeholder="Profile ID">
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Sign in</button>
+          <!--user name-->
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" placeholder="You name">
+            </div>
           </div>
-        </div>
-      </form>
-  </div>
-</div>
+          <!--user email-->
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">E-Mail</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="Your Emaill Address">
+            </div>
+          </div>
+          <!--story title-->
+          <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Story Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="title" placeholder="Story Title">
+            </div>
+          </div>
+          <!--story-->
+          <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">Story</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="description" placeholder="Story"></textarea>
+            </div>
+          </div>
+          <!--story image-->
+          <div class="form-group">
+            <label for="url" class="col-sm-2 control-label">Image</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="url" placeholder="Image URL">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+        </form>
+    </div><!-- end of col-md-4 -->
+    <div class="col-md-3">
+      <h3>Top Story</h3>
+      <h4>Title</h4>
+      <p>Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here Description goes to here</p>
+    </div>
+  </div><!-- end of row -->
+</div><!-- end of container -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
