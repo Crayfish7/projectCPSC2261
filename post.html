@@ -17,37 +17,17 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <style type="text/css">
-    .main-body {
-     
-     border-radius: 50px 15px;
-     background-color: #DDE;
-     text-align: center;
-     padding: 10px 10px 10px 10px;
-     float: center;
-     postition: relative;
-    }
-    .left-column{
-       border-style: dotted;
-       float: left;
-       position: relative;
-    }
-    .right-column{
-       border-style: dotted;
-       float: right;         
-       position: relative;
-    }
-  </style>
   <title>Weirdo</title>
+
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   <script language="javascript">
     var myApp = angular.module('myApp', []);
     myApp.controller('postController', function($scope, $http) {
+
       var dataobj = {};
+      
       $scope.postStory = function() {
-        console.log("Hello, World!!");
-        /*
-        dataObj.push = {
+        dataObj = {
           profile_id : $scope.profile_id,
           name : $scope.userName,
           email : $scope.email,
@@ -55,9 +35,18 @@
           story : $scope.story,
           url : $scope.url
         };
-      console.log(dataObj.profile_id);
-      */
-      };
+
+        $http.post('http://jsonstub.com/message/post', dataObj).
+          success(function(data, status, headers, config) {
+            // this callback will be called asynchronously
+            // when the response is available
+            alert(JSON.stringify(data));
+        }).
+        error(function(data, status, headers, config) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        });
+      }
     });
   </script>
 </head>
@@ -102,42 +91,42 @@
           <div class="form-group">
             <label for="profile_id" class="col-sm-2 control-label">ID</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="profile_id" placeholder="Profile ID">
+              <input type="text" class="form-control" id="profile_id" ng-model="profile_id" placeholder="Profile ID">
             </div>
           </div>
           <!--user name-->
           <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="userName" placeholder="You name">
+              <input type="text" class="form-control" id="userName" ng-model="userName" placeholder="You name">
             </div>
           </div>
           <!--user email-->
           <div class="form-group">
             <label for="email" class="col-sm-2 control-label">E-Mail</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Your Emaill Address">
+              <input type="email" class="form-control" id="email" ng-model="email" placeholder="Your Emaill Address">
             </div>
           </div>
           <!--story title-->
           <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Story Title</label>
+            <label for="title" class="col-sm-2 control-label">Title</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="storyTitle" placeholder="Story Title">
+              <input type="text" class="form-control" id="storyTitle" ng-model="storyTitle" placeholder="Story Title">
             </div>
           </div>
           <!--story-->
           <div class="form-group">
             <label for="description" class="col-sm-2 control-label">Story</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="description" placeholder="Story"></textarea>
+              <textarea class="form-control" id="description" ng-model="description" placeholder="Story"></textarea>
             </div>
           </div>
           <!--story image-->
           <div class="form-group">
             <label for="url" class="col-sm-2 control-label">Image</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="url" placeholder="Image URL">
+              <input type="text" class="form-control" id="url" ng-model="url" placeholder="Image URL">
             </div>
           </div>
           <div class="form-group">
