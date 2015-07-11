@@ -9,7 +9,9 @@
           email : $scope.email,
           title : $scope.storyTitle,
           story : $scope.story,
-          url : $scope.url
+          url : $scope.url,
+          likes : 0 
+          //like counter?
         };
         $http.post('http://jsonstub.com/message/post', dataObj).
           success(function(data, status, headers, config) {
