@@ -1,21 +1,19 @@
-    .main-body {
-     border-style: dotted;
-     width: 99%;
-     margin: auto;
-     background-color: lightgrey;
-     text-align: center;
-     padding: 10px 10px 10px 10px;
-     float: center;
-     postition: relative;
-    }
-    .left-column{
-       float: left;
-       position: relative;
-    }
-    .right-column{
-       float: right;         
-       position: relative;
-    }
-    .wrapper{
-       float: center;
-    }
+.main-body {
+  border-radius: 50px 15px;
+  background-color: #DDE;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  float: center;
+  postition: relative;
+}
+.left-column{
+   float: left;
+   position: relative;
+}
+.right-column{
+   float: right;         
+   position: relative;
+}
+.wrapper{
+ floatoat: center;
+}
