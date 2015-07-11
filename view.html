@@ -22,6 +22,7 @@
          				}
             			});
          		}
+         		//for updating the like counter of the user's post
          		$scope.like_counter = function(number,user_id,user_name, user_email, user_title,user_story,user_url, user_likes){
          			
          			dataObj = {
@@ -34,7 +35,7 @@
           			likes : number + user_likes;
         			};
 
-         			$http.put('http://jsonstub.com/message/post', dataObj).
+         			$http.post('http://jsonstub.com/message/post', dataObj).
           				success(function(data, status, headers, config) {
           				console.log(user_id+ "has been updated.");	
         			}).
