@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp"><head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script language="javascript">
+      var myApp = angular.module('myApp',[]);
+      myApp.controller('myController', function($scope,$http){
+         $scope.fetchImages = function(){
+            $http({
+               url: 'http://52.25.213.221:1337/messages/all',
+               method: 'GET',
+               dataType: 'json', 
+               data: '',         
+               headers: {
+                  'Content-Type': 'application/json',
+               }
+            }).success(function (data, status, headers, config) {
+         alert(JSON.stringify(data, null, 4));
+            });
+         }
+      });
+      /*myApp.controller('myController',function ($scope,$http){
+         $scope.fetchImages = function(){
+            $http.get('http://52.25.213.221:1337/messages/all').success(function(response)
+            {
+               console.log(response.data);
+            });
+         }
+      });*/
+      
+	</script> 
+    </head>
+    
+      <body ng-controller='myController' ng-init="fetchImages()">
+
+      </body>
+    
+</html>
+
+
