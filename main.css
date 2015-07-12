@@ -15,5 +15,11 @@
    position: relative;
 }
 .wrapper{
- floatoat: center;
+ float: center;
+}
+#banner{
+  width: 400px;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
 }
