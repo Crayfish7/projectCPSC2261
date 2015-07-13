@@ -37,6 +37,16 @@ app.put("/messages/put", function (req,res){
     }); 
 
 });
+
+//updates the vote counter, haven't tested it - Lesley, will fix profile id later
+//profile id is not unique, might need to add another id for messages id?
+app.post("/messages/weirdness", function (req,res){
+	var profileId = req.body;
+	db.messages.update({profile_id: profileId},{$inc : { likes: 1 }}, function(err, records){
+		res.send(req.body + " likes updated!");	
+	});
+});
+
 var server = app.listen(1337, function () {
 
     var host = server.address().address;
