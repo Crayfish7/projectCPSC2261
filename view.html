@@ -50,7 +50,7 @@
 		<div ng-repeat="post in posts | filter: likes" class="view_post">
 			<div style="float:left;"> 
 				{{post.name}} <br>
-			 <button type="button" ng-click="like_counter(post.profile_id); $parent.likes = {likes: post.likes}" class="btn btn-primary">Likes <span class="badge">{{post.likes}}</span></button>
+			 <button type="button" ng-click="like_counter(post.profile_id); increment_like(post);" class="btn btn-primary">Likes <span class="badge">{{post.likes}}</span></button>
 			<!-- using bootstrap badge & label button, this is just a placeholder
                         	<button ng-click="like_counter(post.profile_id); $parent.likes = {likes: post.likes}">Like This Post</button>
                         -->
