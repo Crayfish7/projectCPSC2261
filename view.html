@@ -52,7 +52,7 @@
 				{{post.name}} <br>
 				{{post.likes}}
 			<!-- using bootstrap badge & label button, this is just a placeholder-->
-                        <button ng-click="like(post.profile_id)">Like This Post</button>
+                        <button ng-click="like_counter(post.profile_id); post.likes+1">Like This Post</button>
 			</div>
 			<div style="float:center;">
 				{{post.story}}
