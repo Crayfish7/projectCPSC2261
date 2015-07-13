@@ -1,12 +1,13 @@
 
 var http = require('http');
 var express = require('express');
-var bodyParser = require('body-parser')
-var mongojs = require('mongojs')
+var bodyParser = require('body-parser');
+var mongojs = require('mongojs');
 var db = mongojs('test',["messages"]);
 
 app = express();
 app.use(bodyParser.json());
+
 app.get("/messages/all", function (req, res) {	
 	db.messages.find(function(err, records) {
 		if (records.length == 0) {				
@@ -24,26 +25,18 @@ app.get("/messages/main", function (req, res){
 	res.send(JSON.stringify(db.profile.find().limit(1).skip(0).next()));
 	});
 
-app.put("/messages/post", function (req,res){
-	var profileId = req.body;
-	/*var name= req.name;
-	var story=req.story;
-	var image=req.image;*/
-	//db.messages.update({"id":profileId},{$push:{"story":story,"name": name,"image":image}})
-	db.profile.insert(req.body, function(err, records){
-	res.send(req.body + " saved!");	
+app.put("/messages/put", function (req,res){
+	var profile = req.body;
+	db.messages.insert(profile, function(err, records) {
+		if(err) {
+			console.log(err)
+		} else {
+			res.send(JSON.stringify(records)+" inserted!");
+			res.status(200);
+		}
     }); 
 
 });
-
-//updates the vote counter, haven't tested it - Lesley
-app.post("/messages/post", function (req,res){
-	var profileId = req.body;
-	db.profile.update({profile_id: profileId},{$inc : { likes: 1 }}, function(err, records){
-		res.send(req.body + " likes updated!");	
-	});
-});
-
 var server = app.listen(1337, function () {
 
     var host = server.address().address;
