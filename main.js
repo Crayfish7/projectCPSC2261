@@ -4,6 +4,7 @@
 
       var dataobj = {};
       
+      //invisible like counter for the posts
       $scope.postStory = function() {
         dataObj = {
           profile_id : $scope.profile_id,
@@ -11,7 +12,8 @@
           email : $scope.email,
           title : $scope.storyTitle,
           story : $scope.story,
-          url : $scope.url
+          url : $scope.url,
+          likes : 0
         };
          $http({
             url: 'http://jsonstub.com/message/post',
