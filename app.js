@@ -35,6 +35,15 @@ app.put("/messages/post", function (req,res){
     }); 
 
 });
+
+//updates the vote counter, haven't tested it - Lesley
+app.post("/messages/post", function (req,res){
+	var profileId = req.body;
+	db.profile.update({profile_id: profileId},{$inc : { likes: 1 }}, function(err, records){
+		res.send(req.body + " likes updated!");	
+	});
+});
+
 var server = app.listen(1337, function () {
 
     var host = server.address().address;
