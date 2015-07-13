@@ -67,23 +67,14 @@
             			});
          		}
          		//for updating the like counter of the user's post
-         		$scope.like_counter = function(number){
-         			
-         			dataObj = {
-          			profile_id : user_id,
-          			name : user_name,
-          			email : user_email,
-          			title : user_title,
-          			story : user_story,
-          			url : user_url,
-          			likes : number + user_likes;
-        			};
+         		$scope.like_counter = function(user_id){
          			$http.post('http://52.25.213.221:1337/messages/post', dataObj).
           				success(function(data, status, headers, config) {
-          				console.log(user_id+ "has been updated.");	
-        			}).
+          					console.log(user_id+ "has been updated.");	
+        				}).
         				error(function(data, status, headers, config) {
-        			});
+        					console.log(user_id+ "was unsuccessful.");
+        				});
          		}
 		});
     // 'dataType' and 'data' are explicitly required for the Content-Type header to be sent
