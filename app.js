@@ -17,7 +17,6 @@ app.get("/messages/all", function (req, res) {
 		}
 	})
 }); 
-< a href ="52.25.213.221:1337/messages/post"
 
 app.get("/messages/main", function (req, res){
 	var noProfiles= db.profile.count();
