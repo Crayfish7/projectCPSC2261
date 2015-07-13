@@ -78,5 +78,10 @@
         					console.log(user_id+ "was unsuccessful.");
         				});
          		}
+         		
+         		//increments likes counter on the button
+         		$scope.increment_like= function(post){
+         			post.likes += 1;
+         		}
 		});
     // 'dataType' and 'data' are explicitly required for the Content-Type header to be sent
