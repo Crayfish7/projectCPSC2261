@@ -1,9 +1,10 @@
 .main-body {
+  max-width: 600px;
   border-radius: 50px 15px;
   background-color: #DDE;
   text-align: center;
   padding: 10px;
-  margin: 10px;
+  margin: auto;
   float: center;
   position: relative;
 }
@@ -17,7 +18,7 @@
 }
 .wrapper{
   float: center;
-  margin: 20px;
+  margin: 60px;
 }
 #banner{
   width: 400px;
