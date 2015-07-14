@@ -4,7 +4,7 @@
 
       var dataobj = {};
       
-      //invisible like counter for the posts
+      //extract value from <input> and send to back end
       $scope.postStory = function() {
         dataObj = {
           profile_id : $scope.profile_id,
@@ -15,20 +15,17 @@
           url : $scope.url,
           likes : 0
         };
-         $http({
-            url: 'http://jsonstub.com/message/post',
-            method: 'PUT',
-            dataType: 'json', 
-            data: dataobj,         
-            headers: {
-               'Content-Type': 'application/json',
-               'JsonStub-User-Key': 'd42e4a29-7430-4b5f-a3dc-a9b22f0e14ec',
-               'JsonStub-Project-Key': 'a9707087-df35-41f9-8e9e-6a310e9eeee2'
-            }
-         }).success(function (data, status, headers, config) {
-            console.log(status);
-            console.log(dataObj);
-         });
+
+        $http.put('http://52.26.201.47:1337/messages/put', dataObj).
+          success(function(data, status, headers, config) {
+            // this callback will be called asynchronously
+            // when the response is available
+            alert(JSON.stringify(data));
+          }).
+          error(function(data, status, headers, config) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+          });
       }
     // 'dataType' and 'data' are explicitly required for the Content-Type header to be sent
    });
