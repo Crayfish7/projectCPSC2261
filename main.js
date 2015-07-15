@@ -1,11 +1,20 @@
     //javascript for post html
     var postApp = angular.module('postApp', []);
+
     postApp.controller('postController', function($scope, $http) {
 
       var dataobj = {};
-      
+      var config = {headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With',
+          'Content-Type': 'application/json'
+        }
+      };
+
       //extract value from <input> and send to back end
       $scope.postStory = function() {
+
         dataObj = {
           profile_id : $scope.profile_id,
           name : $scope.userName,
@@ -16,20 +25,20 @@
           likes : 0
         };
 
-        $http.put('http://52.26.201.47:1337/messages/put', dataObj).
+        $http.put('http://52.26.201.47:1337/messages/put', dataObj, config).
           success(function(data, status, headers, config) {
             // this callback will be called asynchronously
             // when the response is available
             alert(JSON.stringify(data));
           }).
           error(function(data, status, headers, config) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
           });
-      }
-    // 'dataType' and 'data' are explicitly required for the Content-Type header to be sent
-   });
-   
+      };
+
+    });
+
    //javascript for index html
    angular.module('indexApp',['ui.bootstrap']);
 		angular.module('indexApp').controller('random_post_controller', function($scope,$http){
