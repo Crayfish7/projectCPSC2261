@@ -1,16 +1,11 @@
     //javascript for post html
+
     var postApp = angular.module('postApp', []);
+    var setting = { headers: { 'Content-Type': 'application/json' } };
 
     postApp.controller('postController', function($scope, $http) {
 
       var dataobj = {};
-      var config = {headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With',
-          'Content-Type': 'application/json'
-        }
-      };
 
       //extract value from <input> and send to back end
       $scope.postStory = function() {
@@ -25,13 +20,14 @@
           likes : 0
         };
 
-        $http.put('http://52.26.201.47:1337/messages/put', dataObj, config).
+        $http.put('http://52.26.201.47:1337/messages/put', dataObj, setting).
           success(function(data, status, headers, config) {
-            // this callback will be called asynchronously
-            // when the response is available
-            alert(JSON.stringify(data));
+            // Need to direct to a success page
+            // ref - http://stackoverflow.com/questions/25737540/angular-js-redirecting-to-another-page
+            alert("Your weird story is posted!");
           }).
           error(function(data, status, headers, config) {
+            alert("Not success");
             // called asynchronously if an error occurs
             // or server returns response with an error status.
           });
