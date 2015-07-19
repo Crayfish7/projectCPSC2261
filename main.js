@@ -3,7 +3,7 @@
     var postApp = angular.module('postApp', []);
     var setting = { headers: { 'Content-Type': 'application/json' } };
 
-    postApp.controller('postController', function($scope, $http) {
+    postApp.controller('postController', function($scope, $http, $location) {
 
       var dataobj = {};
 
@@ -16,15 +16,15 @@
           email : $scope.email,
           title : $scope.storyTitle,
           story : $scope.story,
-          url : $scope.url,
+          url : $scope.img_url,
           likes : 0
         };
 
-        $http.put('http://52.26.201.47:1337/messages/put', dataObj, setting).
+        $http.put('http://52.26.201.47:1338/messages/put', dataObj, setting).
           success(function(data, status, headers, config) {
             // Need to direct to a success page
             // ref - http://stackoverflow.com/questions/25737540/angular-js-redirecting-to-another-page
-            alert("Your weird story is posted!");
+            window.location = "/weirdo/post_success.html";
           }).
           error(function(data, status, headers, config) {
             alert("Not success");
