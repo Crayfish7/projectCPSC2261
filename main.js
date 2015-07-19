@@ -1,4 +1,5 @@
     //javascript for post html
+    //this function is completed and tested - Nowel
 
     var postApp = angular.module('postApp', []);
     var setting = { headers: { 'Content-Type': 'application/json' } };
@@ -37,39 +38,32 @@
 
    //javascript for index html
    angular.module('indexApp',['ui.bootstrap']);
-		angular.module('indexApp').controller('random_post_controller', function($scope,$http){
-			var random_post = [];
-			//calls fetch_post two times to save into random_post array
-			$scope.fetch_post = function(){
-				$http.get('http://52.25.213.221:1337/messages/main').success(function(response){
-					$scope.random_post.push(response.data);
-				});
-				$http.get('http://52.25.213.221:1337/messages/main').success(function(response){
-					$scope.random_post.push(response.data);
-				});
-			}
-		});
+    angular.module('indexApp').controller('random_post_controller', function($scope,$http){
+      var random_post = [];
+      //calls fetch_post two times to save into random_post array
+      $scope.fetch_post = function(){
+        $http.get('http://52.25.213.221:1337/messages/main').success(function(response){
+          $scope.random_post.push(response.data);
+        });
+        $http.get('http://52.25.213.221:1337/messages/main').success(function(response){
+          $scope.random_post.push(response.data);
+        });
+      }
+    });
       
    //javascript for view html
-		angular.module('viewApp', ['ui.bootstrap']);
-		angular.module('viewApp').controller('view_controller', function($scope,$html){
-			var posts = $scope.posts = [];
-         		$scope.fetch_posts = function(){
-            			$http({
-               				url: 'http://52.25.213.221:1337/messages/all',
-               				method: 'GET',
-               				dataType: 'json', 
-               				data: '',         
-               				headers: {
-                  				'Content-Type': 'application/json',
-               				}
-            			}).success(function (data, status, headers, config) {
-         				for(var i=0;i<data.length;i++){
-         					$scope.posts.push(data[i]);
-         					console.log(data[i]);
-         				}
-            			});
-         		}
+		var viewApp = angular.module('viewApp', ['ui.bootstrap']);
+		  viewApp.controller('view_controller', function($scope, $html){
+
+            //fetch all posts
+         		$scope.fetch_posts = function() {
+              $http.get('http://52.26.201.47:1338/messages/all')
+              .success(function(res){
+                alert("get all posts is done");
+                //$scope.random_post.push(response.data);
+              });
+            };
+
          		//for updating the like counter of the user's post
          		$scope.like_counter = function(user_id){
          			$http.post('http://52.25.213.221:1337/messages/post', dataObj).
