@@ -4,7 +4,7 @@
   background-color: #DDE;
   text-align: center;
   padding: 10px;
-  margin: auto;
+  margin: 10px auto;
   float: center;
   position: relative;
 }
@@ -25,4 +25,10 @@
   display: block; 
   margin-left: auto;
   margin-right: auto;
+}
+#story{
+  margin: 18px;
+}
+#weird-button{
+  margin: 10px;
 }
