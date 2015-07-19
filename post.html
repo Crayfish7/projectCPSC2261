@@ -41,6 +41,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
         <li class="active"><a href="post.html">POST<span class="sr-only">(current)</span></a></li>
         <li><a href="view.html">VIEW</a></li>
       </ul>
@@ -48,59 +49,57 @@
   </div><!-- /.container-fluid -->
   </nav>
 <div class="container" ng-controller="postController">
-  <div class="row">
-    <div class="main-body">
-        <form class="form-horizontal">
-          <!--user input ID-->
-          <div class="form-group">
-            <label for="profile_id" class="col-sm-2 control-label">ID</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="profile_id" ng-model="profile_id" placeholder="Profile ID">
-            </div>
+  <div class="main-body">
+      <form class="form-horizontal">
+        <!--user input ID-->
+        <div class="form-group">
+          <label for="profile_id" class="col-sm-2 control-label">ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="profile_id" ng-model="profile_id" placeholder="Profile ID">
           </div>
-          <!--user name-->
-          <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="userName" ng-model="userName" placeholder="You name">
-            </div>
+        </div>
+        <!--user name-->
+        <div class="form-group">
+          <label for="name" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="userName" ng-model="userName" placeholder="You name">
           </div>
-          <!--user email-->
-          <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">E-Mail</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" ng-model="email" placeholder="Your Emaill Address">
-            </div>
+        </div>
+        <!--user email-->
+        <div class="form-group">
+          <label for="email" class="col-sm-2 control-label">E-Mail</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" ng-model="email" placeholder="Your Emaill Address">
           </div>
-          <!--story title-->
-          <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Title</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="storyTitle" ng-model="storyTitle" placeholder="Story Title">
-            </div>
+        </div>
+        <!--story title-->
+        <div class="form-group">
+          <label for="title" class="col-sm-2 control-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="storyTitle" ng-model="storyTitle" placeholder="Story Title">
           </div>
-          <!--story-->
-          <div class="form-group">
-            <label for="description" class="col-sm-2 control-label">Story</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" id="description" ng-model="description" placeholder="Story"></textarea>
-            </div>
+        </div>
+        <!--story-->
+        <div class="form-group">
+          <label for="description" class="col-sm-2 control-label">Story</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="description" ng-model="description" placeholder="Story"></textarea>
           </div>
-          <!--story image-->
-          <div class="form-group">
-            <label for="url" class="col-sm-2 control-label">Image</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="url" ng-model="url" placeholder="Image URL">
-            </div>
+        </div>
+        <!--story image-->
+        <div class="form-group">
+          <label for="img_url" class="col-sm-2 control-label">Image</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="img_url" ng-model="img_url" placeholder="Image URL">
           </div>
-          <div class="form-group">
-            <div class="col-sm-12">
-              <button type="submit" class="btn btn btn-primary" ng-click = "postStory()">POST</button>
-            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn btn-primary" ng-click = "postStory()">POST</button>
           </div>
-        </form>
-    </div><!-- end of col-md-6 -->
-  </div><!-- end of row -->
+        </div>
+      </form>
+  </div><!-- end of main body -->
 </div><!-- end of container -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
