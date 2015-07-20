@@ -1,4 +1,3 @@
-
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -17,13 +16,13 @@ app.all('*', function(req, res, next) {
 
 app.get("/messages/all", function (req, res) {	
 	db.messages.find(function(err, records) {
-		if (records.length == 0) {				
+		if (records.length === 0) {				
 			res.status(404);
 			res.send('No profiles exist'); 
 		} else {
 			res.send(JSON.stringify(records));
 		}
-	})
+	});
 }); 
 
 app.get("/messages/main", function (req, res){
@@ -37,7 +36,7 @@ app.put("/messages/put", function (req,res){
 	var profile = req.body;
 	db.messages.insert(profile, function(err, records) {
 		if(err) {
-			console.log(err)
+			console.log(err);
 		} else {
 			res.send(JSON.stringify(records)+" inserted!");
 			res.status(200);
