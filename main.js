@@ -68,9 +68,10 @@
       };
 
       //for updating the like counter of the user's post
+      //The like counter works now. - Lesley
       $scope.like_counter = function(post) {
         dataObj = { "profile_id": post.profile_id };
-        alert(dataObj.profile_id);
+        //alert(dataObj.profile_id);
          $http.post('http://52.26.201.47:1338/messages/weirdness', dataObj, setting)
             .success(function(data, status, headers, config) {
     				console.log(dataObj.profile_id + "'s weird has been updated.");	
