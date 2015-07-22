@@ -52,32 +52,39 @@
     });
       
    //javascript for view html
-		var viewApp = angular.module('viewApp', ['ui.bootstrap']);
-		  viewApp.controller('view_controller', function($scope, $html){
+		var myViewApp = angular.module('viewApp', []);
+		myViewApp.controller('view_controller', function($scope, $http){
+      //fetch all posts
+      $scope.fetch_posts = function() {
+        $http.get('http://52.26.201.47:1338/messages/all').
+        success(function(res){
+          $scope.posts = res;
+        }).
+        error(function(data, status, headers, config) {
+          alert("Not success");
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        });
+      };
 
-            //fetch all posts
-         		$scope.fetch_posts = function() {
-              $http.get('http://52.26.201.47:1338/messages/all')
-              .success(function(res){
-                alert("get all posts is done");
-                //$scope.random_post.push(response.data);
-              });
-            };
-
-         		//for updating the like counter of the user's post
-         		$scope.like_counter = function(user_id){
-         			$http.post('http://52.25.213.221:1337/messages/post', dataObj).
-          				success(function(data, status, headers, config) {
-          					console.log(user_id+ "has been updated.");	
-        				}).
-        				error(function(data, status, headers, config) {
-        					console.log(user_id+ "was unsuccessful.");
-        				});
-         		}
-         		
-         		//increments likes counter on the button
-         		$scope.increment_like= function(post){
-         			post.likes += 1;
-         		}
+      //for updating the like counter of the user's post
+   		$scope.like_counter = function(profile_id) {
+        var dataObj = { "profile_id": profile_id };
+        alert(profile_id);
+        /*
+   			$http.post('http://52.26.201.47:1338/messages/weirdness', dataObj).
+    			success(function(data, status, headers, config) {
+    				console.log(profile_id + "'s weird has been updated.");	
+  			 }).
+  				error(function(data, status, headers, config) {
+  					console.log(user_id+ "was unsuccessful.");
+  				});
+        */
+   		};
+   		/*
+   		//increments likes counter on the button
+   		$scope.increment_like= function(post) {
+   			post.likes += 1;
+   		};*/
 		});
     // 'dataType' and 'data' are explicitly required for the Content-Type header to be sent
