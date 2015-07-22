@@ -68,23 +68,22 @@
       };
 
       //for updating the like counter of the user's post
-   		$scope.like_counter = function(profile_id) {
-        var dataObj = { "profile_id": profile_id };
-        alert(profile_id);
-        /*
-   			$http.post('http://52.26.201.47:1338/messages/weirdness', dataObj).
-    			success(function(data, status, headers, config) {
-    				console.log(profile_id + "'s weird has been updated.");	
-  			 }).
-  				error(function(data, status, headers, config) {
-  					console.log(user_id+ "was unsuccessful.");
+      $scope.like_counter = function(post) {
+        dataObj = { "profile_id": post.profile_id };
+        alert(dataObj.profile_id);
+         $http.post('http://52.26.201.47:1338/messages/weirdness', dataObj, setting)
+            .success(function(data, status, headers, config) {
+    				console.log(dataObj.profile_id + "'s weird has been updated.");	
+            })
+            .error(function(data, status, headers, config) {
+  					console.log(dataObj.profile_id+ "was unsuccessful.");
   				});
-        */
-   		};
-   		/*
-   		//increments likes counter on the button
-   		$scope.increment_like= function(post) {
-   			post.likes += 1;
-   		};*/
-		});
+      };
+      
+      
+      //increments likes counter on the button
+      $scope.increment_like= function(post) {
+         post.likes += 1;
+      };
+	});
     // 'dataType' and 'data' are explicitly required for the Content-Type header to be sent
