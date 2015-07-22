@@ -1,3 +1,4 @@
+
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -20,6 +21,7 @@ app.get("/messages/all", function (req, res) {
 			res.status(404);
 			res.send('No profiles exist'); 
 		} else {
+			res.set('Content-Type', 'application/json');
 			res.send(JSON.stringify(records));
 		}
 	});
@@ -48,9 +50,9 @@ app.put("/messages/put", function (req,res){
 //updates the vote counter, haven't tested it - Lesley. 
 //Will fix profile id later
 //profile id is not unique, might need to add another id for messages id?
-app.post("/messages/weirdness", function (req,res){
-	var profileId = req.body;
-	db.messages.update({"profile_id" : profileId},{$inc : { likes: 1 }}, function(err, records){
+app.post("/messages/weirdness", function (req, res){
+	var id = req.body;
+	db.messages.update( id, { $inc: { likes: 1 } }, function(err, records){
 		res.send(req.body + " likes updated!");	
 		res.status(200);
 	});
