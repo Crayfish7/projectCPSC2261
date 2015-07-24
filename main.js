@@ -42,10 +42,10 @@
       var random_post = [];
       //calls fetch_post two times to save into random_post array
       $scope.fetch_post = function(){
-        $http.get('http://52.25.213.221:1337/messages/main').success(function(response){
+        $http.get('http://52.26.201.47:1338/messages/main').success(function(response){
           $scope.random_post.push(response.data);
         });
-        $http.get('http://52.25.213.221:1337/messages/main').success(function(response){
+        $http.get('http://52.26.201.47:1338/messages/main').success(function(response){
           $scope.random_post.push(response.data);
         });
       }
