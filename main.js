@@ -37,15 +37,15 @@
     });
 
    //javascript for index html
-   angular.module('indexApp',['ui.bootstrap']);
-    angular.module('indexApp').controller('random_post_controller', function($scope,$http){
+    var myIndexApp = angular.module('indexApp',['ui.bootstrap']);
+    myIndexApp.controller('random_post_controller', function($scope,$http){
       var random_post = [];
       //calls fetch_post two times to save into random_post array
       $scope.fetch_post = function(){
-        $http.get('http://52.26.201.47:1338/messages/main').success(function(response){
+        $http.get('http://52.26.201.47:1338/messages/main',setting).success(function(response){
           $scope.random_post.push(response.data);
         });
-        $http.get('http://52.26.201.47:1338/messages/main').success(function(response){
+        $http.get('http://52.26.201.47:1338/messages/main',setting).success(function(response){
           $scope.random_post.push(response.data);
         });
       }
