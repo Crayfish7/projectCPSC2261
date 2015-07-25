@@ -53,16 +53,16 @@
       <form class="form-horizontal">
         <!--user input ID-->
         <div class="form-group">
-          <label for="profile_id" class="col-sm-2 control-label">ID</label>
+          <label for="profile_id" class="col-sm-2 control-label">ID *</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="profile_id" ng-model="profile_id" placeholder="Profile ID">
+            <input type="text" class="form-control" id="profile_id" ng-model="profile_id" placeholder="Profile ID" required>
           </div>
         </div>
         <!--user name-->
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="userName" ng-model="userName" placeholder="You name">
+            <input type="text" class="form-control" id="userName" ng-model="userName" placeholder="Your name">
           </div>
         </div>
         <!--user email-->
@@ -74,9 +74,9 @@
         </div>
         <!--story title-->
         <div class="form-group">
-          <label for="title" class="col-sm-2 control-label">Title</label>
+          <label for="title" class="col-sm-2 control-label">Title *</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="storyTitle" ng-model="storyTitle" placeholder="Story Title">
+            <input type="text" class="form-control" id="storyTitle" ng-model="storyTitle" placeholder="Story Title" required>
           </div>
         </div>
         <!--story-->
@@ -88,9 +88,9 @@
         </div>
         <!--story image-->
         <div class="form-group">
-          <label for="img_url" class="col-sm-2 control-label">Image</label>
+          <label for="img_url" class="col-sm-2 control-label">Image *</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="img_url" ng-model="img_url" placeholder="Image URL">
+            <input type="text" class="form-control" id="img_url" ng-model="img_url" placeholder="Image URL" required>
           </div>
         </div>
         <div class="form-group">
