@@ -57,25 +57,27 @@
         <div class="col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">Top Story</div>
-            <div class="panel-body">
-              <div ng-model="random_post[0]">
-                <img src="random_post[0].url" class="img-responsive center-block" /img>
-                //{{random_post[0].title}}, {{random_post[0].story}}, {{random_post[0].name}}
-                <p class="lead">Story here...</p>
-              </div>
-            </div>
+            	<div class="panel-body">
+              		<div ng-model="random_post[0]">
+                		<img src="random_post[0].url" class="img-responsive center-block" /img>
+        			 //{{random_post[0].title}}, {{random_post[0].story}}, {{random_post[0].name}}
+                		<p class="lead">{{random_post[0].story}}</p>
+                		<button type="button" ng-click="increment_like(random_post[0]); like_counter(random_post[0])" class="btn btn-primary" id="weird-button">Weird <span class="badge">{{random_post[0].likes}}</span></button>
+        		 </div>
+            	</div>
      	    </div> <!-- end of panel info -->
         </div> <!-- end of col-md-6 -->
         <div class="col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">Top Story</div>
-            <div class="panel-body">
-         	<div ng-model="random_post[1]">
-                <img src="random_post[1].url" class="img-responsive center-block" /img>
-                //{{random_post[1].title}}, {{random_post[1].story}}, {{random_post[1].name}}
-                <p class="lead">Story here...</p>
-         	</div>
-            </div>
+        	 <div class="panel-body">
+         		<div ng-model="random_post[1]">
+        		   <img src="random_post[1].url" class="img-responsive center-block" /img>
+        		   //{{random_post[1].title}}, {{random_post[1].story}}, {{random_post[1].name}}
+        		  <p class="lead">{{random_post[1].story}}</p>
+        		  <button type="button" ng-click="increment_like(random_post[1]); like_counter(random_post[1])" class="btn btn-primary" id="weird-button">Weird <span class="badge">{{random_post[1].likes}}</span></button>
+         		</div>
+            	</div>
           </div> <!-- end of panel info -->
         </div> <!-- end of col-md-6 -->
       </div>
