@@ -28,10 +28,46 @@ app.get("/messages/all", function (req, res) {
 }); 
 
 app.get("/messages/main", function (req, res){
-	var noProfiles= db.profile.count();
-	var random= Math.floor(Math.random()* noProfiles);
-	res.send(JSON.stringify(db.profile.find().limit(1).skip(0).next()));
+	db.messages.find(function(err, records) {
+		var obj = [];
+
+		if (records.length === 0) {				
+			res.status(404);
+			res.send('No profiles exist'); 
+		} else {
+			var top = records[0].likes;
+			var second = records[1].likes;
+
+			if(top > second) {
+				obj[0] = records[0];
+				obj[1] = records[1];
+			}
+
+			if(top < second) {
+				obj[0] = records[1];
+				obj[1] = records[0];
+				var top = records[1].likes;
+				var second = records[0].likes;
+			}
+
+			for(var i=2; i<records.length; i++) {
+
+				if (records[i].likes > second) {
+					second = records[i].likes;
+					obj[1] = records[i];
+				}
+				if (records[i].likes > top) {
+					second = top;
+					obj[1] = obj[0];
+					top = records[i].likes;
+					obj[0] = records[i];
+				}
+			}
+			res.set('Content-Type', 'application/json');
+			res.send(JSON.stringify(obj));
+		}
 	});
+});
 
 app.put("/messages/put", function (req,res){
 	
