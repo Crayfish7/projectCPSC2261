@@ -18,7 +18,12 @@
 }
 .wrapper{
   float: center;
-  margin: 60px;
+  margin: 10px 140px;
+}
+.story_title{
+  font-family:Lucida Sans Unicode;
+  text-align: center;
+  font-size: 30px;
 }
 #banner{
   width: 400px;
@@ -31,4 +36,8 @@
 }
 #weird-button{
   margin: 10px;
+}
+
+#emphasize {
+  color: #FF0000;
 }
