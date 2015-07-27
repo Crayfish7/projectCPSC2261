@@ -38,15 +38,15 @@
 
    //javascript for index html
     var myIndexApp = angular.module('indexApp',['ui.bootstrap']);
-    myIndexApp.controller('random_post_controller', function($scope,$http){
-      var random_post = [];
-      //calls fetch_post two times to save into random_post array
+    myIndexApp.controller('top_post_controller', function($scope,$http){
+      $scope.top_post = [];
+      //calls fetch_post two times to save into top_post array
       $scope.fetch_post = function(){
         $http.get('http://52.26.201.47:1338/messages/main',setting).success(function(response){
-          $scope.random_post.push(response.data);
-        });
-        $http.get('http://52.26.201.47:1338/messages/main',setting).success(function(response){
-          $scope.random_post.push(response.data);
+          $scope.top_post = response;
+        }).
+        error(function(data, status, headers, config) {
+          alert("Top post failed.");
         });
       }
       //like counter for index page
