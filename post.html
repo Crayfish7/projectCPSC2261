@@ -50,10 +50,10 @@
   </nav>
 <div class="container" ng-controller="postController">
   <div class="main-body">
-      <form class="form-horizontal">
+      <form name="postform" class="form-horizontal">
         <!--user input ID-->
-        <div class="form-group">
-          <label for="profile_id" class="col-sm-2 control-label">ID *</label>
+        <div class="form-group has-error">
+          <label for="profile_id" class="col-sm-2 control-label">ID</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="profile_id" ng-model="profile_id" placeholder="Profile ID" required>
           </div>
@@ -73,8 +73,8 @@
           </div>
         </div>
         <!--story title-->
-        <div class="form-group">
-          <label for="title" class="col-sm-2 control-label">Title *</label>
+        <div class="form-group has-error">
+          <label for="title" class="col-sm-2 control-label">Title</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="storyTitle" ng-model="storyTitle" placeholder="Story Title" required>
           </div>
@@ -87,15 +87,15 @@
           </div>
         </div>
         <!--story image-->
-        <div class="form-group">
-          <label for="img_url" class="col-sm-2 control-label">Image *</label>
+        <div class="form-group has-error">
+          <label for="img_url" class="col-sm-2 control-label">Image</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="img_url" ng-model="img_url" placeholder="Image URL" required>
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-12">
-            <button type="submit" class="btn btn btn-primary" ng-click = "postStory()">POST</button>
+            <button type="submit" ng-disabled="postform.$invalid" class="btn btn btn-primary" ng-click = "postStory()">POST</button>
           </div>
         </div>
       </form>
