@@ -57,24 +57,29 @@
         <div class="col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">Top Story <span id="emphasize">#1</span></div>
-            <div class="panel-body">
-              <p class="story_title">{{random_post[0].title}}</p>
-              <img src="{{random_post[0].url}}" class="img-responsive center-block" /img>
-            </div>
+            	<div class="panel-body">
+            		<div ng-model="top_post">
+              			<p class="story_title">{{top_post[0].title}}</p>
+              			<img src="{{top_post[0].url}}" class="img-responsive center-block" /img>
+              		</div> <!-- end of top_post-->
+            	</div>
      	    </div> <!-- end of panel info -->
         </div> <!-- end of col-md-6 -->
         <div class="col-md-6">
-          <div class="panel panel-info">
-            <div class="panel-heading">Top Story <span id="emphasize">#2</span></div>
-            <div class="panel-body">
-              <p class="story_title">{{random_post[1].title}}</p>
-              <img src="{{random_post[1].url}}" class="img-responsive center-block" /img>
-            </div>
-          </div> <!-- end of panel info -->
+          	<div class="panel panel-info">
+            		<div class="panel-heading">Top Story <span id="emphasize">#2</span></div>
+            			<div class="panel-body">
+            				<div ng-model="top_post">
+              					<p class="story_title">{{top_post[0].title}}</p>
+              					<img src="{{top_post[0].url}}" class="img-responsive center-block" /img>
+              				</div> <!-- end of top_post-->
+              			</div><!-- end of panel-->
+            		</div><!-- end of panel-heading"-->
+		</div> <!-- end of panel info -->
         </div> <!-- end of col-md-6 -->
-      </div>
-    </div>
-  </div>
+      	</div><!-- end of top_post_controller-->
+    </div><!-- end of row-->
+  </div><!-- end of wrapper-->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
