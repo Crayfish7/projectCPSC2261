@@ -13,3 +13,5 @@ post_success.html
   once the post.html succeeds, a new window pops out and indicates that the data was inserted.
 view.html
   shows all the posts created in the database.
+Tester files
+  uses the jsonstub for automated testing for the front end.
